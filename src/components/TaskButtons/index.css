@@ -1,0 +1,29 @@
+.tag-name {
+  margin: 10px;
+}
+
+.tag-btn {
+  background-color: transparent;
+  color: #f8f8f8;
+  font-family: Roboto;
+  font-size: 15px;
+  border: 1px solid #f3aa4e;
+  font-weight: 500;
+  height: 30px;
+  width: 120px;
+  padding: 5px;
+  border-radius: 16px;
+}
+
+.filled-btn {
+  background-color: #f3aa4e;
+  color: #f8f8f8;
+  font-family: Roboto;
+  font-size: 15px;
+  border: none;
+  font-weight: 500;
+  height: 30px;
+  width: 120px;
+  padding: 5px;
+  border-radius: 16px;
+}
