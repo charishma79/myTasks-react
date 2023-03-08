@@ -59,9 +59,12 @@ class TaskItem extends Component {
   onHandleTask = event => {
     event.preventDefault()
     const {activeOptionId, taskInput} = this.state
+     const textDisplay = tagsList.filter(
+      each => each.optionId === activeOptionId,
+    )
     const newTask = {
       id: v4(),
-      group: activeOptionId,
+      group: textDisplay[0].displayText,
       taskInput,
     }
     this.setState(prevState => ({
