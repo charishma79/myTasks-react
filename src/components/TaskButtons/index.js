@@ -3,9 +3,10 @@ import './index.css'
 const TaskButtons = props => {
   const {tagDetails, updateButton, getFilteredTasks} = props
   const {displayText, optionId, isActive} = tagDetails
-
-  const updateTextButton = () => {
-    getFilteredTasks(optionId)
+  
+    const updateTextButton = () => {
+    onClickFilter()
+    getFilteredTasks(displayText)
   }
 
   const onClickButton = () => {
