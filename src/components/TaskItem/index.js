@@ -85,16 +85,18 @@ class TaskItem extends Component {
     }))
   }
 
-  getFilteredTasks = id => {
-    console.log(id)
-    const {tasksList} = this.state
-    const filteredList = tasksList.filter(each => each.group === id)
-    this.setState({tasksList: filteredList})
+    getFilteredTasks = text => {
+    const {tasksList, isFiltered} = this.state
+    if (isFiltered) {
+      return tasksList.filter(each => each.group === text)
+    }
+    return tasksList
   }
 
   render() {
     const {taskInput, activeOptionId, tasksList, newTagsList} = this.state
     console.log(tasksList)
+      const filtered = this.getFilteredTasks()
 
     return (
       <div className="bg-container">
@@ -151,11 +153,11 @@ class TaskItem extends Component {
           </ul>
 
           <h1 className="task-heading">Tasks</h1>
-          {tasksList.length === 0 ? (
+          {filtered.length === 0 ? (
             <p className="no-tasks">No Tasks Added Yet</p>
           ) : (
             <ul className="task-container">
-              {tasksList.map(eachTask => (
+              {filtered.map(eachTask => (
                 <TaskCard key={eachTask.id} taskDetails={eachTask} />
               ))}
             </ul>
